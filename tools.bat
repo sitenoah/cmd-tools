@@ -10,7 +10,7 @@ echo.
 echo 1) Execute the ipconfig command
 echo 2) Open a Notepad window
 echo 3) Start Firefox
-echo 4) Generate a password (work in progress)
+echo 4) Generate a password
 echo 5) Close this window
 echo.
 set /p m=Type 1, 2, 3, 4, or 5 then press ENTER: 
