@@ -70,14 +70,14 @@ if not "%_str:~18%"=="" set _str=%_str:~9%& set /a _len+=9& goto :_pw1
 set _tmp=%_str:~9,1%
 set /a _len=_len+_tmp
 set _count=0
-set _andalphanum=
+set _rndalphanum=
 :_pw2
 set /a _count+=1
 set _rnd=%random%
 set /a _rnd=_rnd%%%_len%
 set _rndalphanum=!_rndalphanum!!_alphanumeric:~%_rnd%,1!
 if !_count! lss %_rndlength% goto _pw2
-echo Your password is !_RndAlphaNum!
+echo Your password is !_rndalphanum!
 pause
 goto :MENU
 
