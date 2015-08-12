@@ -1,4 +1,5 @@
 @echo off
+title CMD Tools
 color 3
 :MENU
 echo.
