@@ -54,7 +54,7 @@ if %firefox%=="true" (
 goto :MENU
 
 :se4
-@echo off
+cls
 setlocal enabledelayedexpansion
 set _rndlength=8
 set _alphanumeric=ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789
