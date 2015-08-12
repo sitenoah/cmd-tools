@@ -3,6 +3,7 @@ title CMD Tools
 color 3
 
 :MENU
+cls
 echo.
 echo Please select an option below.
 echo.
