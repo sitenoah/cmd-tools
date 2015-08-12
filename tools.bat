@@ -6,12 +6,13 @@ color 3
 echo.
 echo Please select an option below.
 echo.
-echo 1 - Execute the ipconfig command
-echo 2 - Open a Notepad window
-echo 3 - Start Firefox
-echo 4 - Close this window
+echo 1) Execute the ipconfig command
+echo 2) Open a Notepad window
+echo 3) Start Firefox
+echo 4) Generate a password (work in progress)
+echo 5) Close this window
 echo.
-set /p m=Type 1, 2, 3, or 4 then press ENTER: 
+set /p m=Type 1, 2, 3, 4, or 5 then press ENTER: 
 if %M%==1 goto se1
 if %M%==2 goto se2
 if %M%==3 goto se3
@@ -40,8 +41,8 @@ if %firefox%=="true" (
     echo Multiple instances of Firefox found.
     echo Which would you like to start?
     echo.
-    echo 1 - Firefox
-    echo 2 - Firefox Developer Edition
+    echo 1) Firefox
+    echo 2) Firefox Developer Edition
     echo.
     set /p m=Type 1 or 2 then press ENTER:
     if %M%==1 (start %programfiles%\Mozilla Firefox\firefox.exe)
@@ -53,7 +54,29 @@ if %firefox%=="true" (
 goto :MENU
 
 :se4
+@echo off
+setlocal enabledelayedexpansion
+set _rndlength=8
+set _alphanumeric=ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789
+set _str=%_alphanumeric%987654321
+:_lenloop
+if not "%_str:~18%"=="" set _str=%_str:~9%& set /a _len+=9& goto :_lenloop
+set _tmp=%_str:~9,1%
+set /a _len=_len+_tmp
+set _count=0
+set _rndalphanum=
+:_loop
+set /a _count+=1
+set _rnd=%random%
+set /a _rnd=_rnd%%%_len%
+set _rndalphanum=!_rndalphanum!!_alphanumeric:~%_rnd%,1!
+if !_count! lss %_rndlength% goto _loop
+echo Your password is !_rndalphanum!
+pause
+goto :MENU
+
+:se5
 cls
-echo Thanks for using our tools!
+echo https://github.com/sitenoah/cmd-tools/
 pause
 exit
