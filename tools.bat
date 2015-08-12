@@ -14,10 +14,11 @@ echo 4) Generate a password (work in progress)
 echo 5) Close this window
 echo.
 set /p m=Type 1, 2, 3, 4, or 5 then press ENTER: 
-if %M%==1 goto se1
-if %M%==2 goto se2
-if %M%==3 goto se3
-if %M%==4 goto se4
+if %M%==1 goto :se1
+if %M%==2 goto :se2
+if %M%==3 goto :se3
+if %M%==4 goto :se4
+if %M%==5 goto :se5
 
 :se1
 cls
