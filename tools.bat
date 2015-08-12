@@ -24,14 +24,12 @@ goto :MENU
 
 :se2
 cls
-cd %windir%\system32\
-start notepad.exe
+start %windir%\system32\notepad.exe
 goto :MENU
 
 :se3
 cls
-cd %programfiles%\Mozilla Firefox
-start firefox.exe
+start %programfiles%\Mozilla Firefox\firefox.exe
 goto :MENU
 
 :se4
