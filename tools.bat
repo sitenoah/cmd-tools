@@ -29,7 +29,27 @@ goto :MENU
 
 :se3
 cls
-start %ProgramFiles%\Mozilla Firefox\firefox.exe
+if exist %programfiles%\Mozilla Firefox\firefox.exe (
+  set firefox=true
+)
+if exist %programfiles%\Firefox Developer Edition\firefox.exe (
+  set firedev=true
+)
+if %firefox%=="true" (
+  if %firedev%=="true" (
+    echo Multiple instances of Firefox found.
+    echo Which would you like to start?
+    echo.
+    echo 1 - Firefox
+    echo 2 - Firefox Developer Edition
+    echo.
+    set /p m=Type 1 or 2 then press ENTER:
+    if %M%==1 (start %programfiles%\Mozilla Firefox\firefox.exe)
+    if %M%==2 (start %programfiles%\Firefox Developer Edition\firefox.exe)
+  ) else (start %programfiles%\Mozilla Firefox\firefox.exe)
+) else (
+  if %firedev%=="true" (start %programfiles%\Firefox Developer Edition\firefox.exe)
+)
 goto :MENU
 
 :se4
