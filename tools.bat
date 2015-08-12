@@ -58,23 +58,26 @@ goto :MENU
 
 :se4
 cls
+set /p lengthnumberuser="Pasword length? "
+pause
+cls
 setlocal enabledelayedexpansion
-set _rndlength=8
+set _rndlength=%lengthnumberuser%
 set _alphanumeric=ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789
 set _str=%_alphanumeric%987654321
-:_lenloop
-if not "%_str:~18%"=="" set _str=%_str:~9%& set /a _len+=9& goto :_lenloop
+:_pw1
+if not "%_str:~18%"=="" set _str=%_str:~9%& set /a _len+=9& goto :_pw1
 set _tmp=%_str:~9,1%
 set /a _len=_len+_tmp
 set _count=0
-set _rndalphanum=
-:_loop
+set _andalphanum=
+:_pw2
 set /a _count+=1
 set _rnd=%random%
 set /a _rnd=_rnd%%%_len%
 set _rndalphanum=!_rndalphanum!!_alphanumeric:~%_rnd%,1!
-if !_count! lss %_rndlength% goto _loop
-echo Your password is !_rndalphanum!
+if !_count! lss %_rndlength% goto _pw2
+echo Your password is !_RndAlphaNum!
 pause
 goto :MENU
 
