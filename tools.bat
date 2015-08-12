@@ -4,7 +4,7 @@ color 3
 
 :MENU
 echo.
-echo PRESS 1, 2 OR 3 to select your task, or 4 to close this window.
+echo Please select an option below.
 echo.
 echo 1 - Execute the ipconfig command
 echo 2 - Open a Notepad window
