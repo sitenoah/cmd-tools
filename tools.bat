@@ -23,6 +23,7 @@ if %M%==5 goto :se5
 :se1
 cls
 ipconfig
+pause
 goto :MENU
 
 :se2
