@@ -8,7 +8,7 @@ echo PRESS 1, 2 OR 3 to select your task, or 4 to close this window.
 echo.
 echo 1 - Execute the ipconfig command
 echo 2 - Open a Notepad window
-echo 3 - Open a Firefox window
+echo 3 - Start Firefox
 echo 4 - Close this window
 echo.
 set /p m=Type 1, 2, 3, or 4 then press ENTER: 
