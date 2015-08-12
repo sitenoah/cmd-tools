@@ -29,7 +29,7 @@ goto :MENU
 
 :se3
 cls
-start %programfiles%\Mozilla Firefox\firefox.exe
+start %ProgramFiles%\Mozilla Firefox\firefox.exe
 goto :MENU
 
 :se4
